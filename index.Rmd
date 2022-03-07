@@ -1,0 +1,152 @@
+---
+title: "Exploratory Analysis"
+output: html_document
+---
+
+## Seattle Pet Licenses
+
+
+
+### Authors
+
+- Anh Dang (anhdang1@uw.edu)
+
+- Nhi Dang (nnvd@uw.com)
+
+- Thao Do (thaotdo@uw.edu)
+
+- Vera Guber (vera2@uw.edu)
+
+### Date
+
+- Winter 2022
+
+### Abstract
+
+- Considering that the population of Seattle has been on the rise and that there are a lot of animals in the shelters, especially dogs and cats, we wanted to encourage the people of Seattle to adopt the animals that are in the shelters. This is important because animal shelters have to put down the animal after some time because no one is adopting them. Accordingly, we will use the information provided by us from the Seattle Pet Licenses website to raise awareness of adopting dogs and cats.
+
+### Keywords
+
+1. Seattle
+2. Pets
+3. License Numbers
+4. License Date
+5. Breed
+
+### Introduction  
+- The main reason why our group chose the Seattle Pet Licenses Dataset is that we want to inform Seattleites on pet ownership trends and explore the opportunity to adopt unlicensed pets from animal shelters.
+- Our main goal is to acknowledge people on the pet licensing trends in Seattle and raise the awareness of adopting. There are several benefits to licensing one's pet, including a return ride home if your pet is lost, and easier contact from a veterinarian if your pet is unfortunately injured. One of the most significant impact is that this could be an essential source to plan on marketing and outreach campaigns targeting cat and dog owners who haven't considered licensing their cat/ dog in zip codes with a higher disparity between the number of cats and dogs.
+Some of the questions we will answers are:
+1. What is the ratio between the number of dogs and cats in Seattle?
+2. What are the  top 5 primary-breeds in dogs and top 5 primary-breeds in cats? Then determine preferred breeds.
+3. The correlation between the number of pet licenses and zip code in Seattle: Which area has the highest number of pets and the lowest?
+4. Overall trends of pet licensing trend over the year?
+5. Is there a difference in seasonality between dogs and cats? How drastically the licenses of cats and dogs increased throughout 2005-2016?
+
+### Related Work  
+
+- The first related work is an online licensing portal which provides the user with questions about their animal, or licensing status. It provides them with the resources to renew their license or to gain possession of a new license if necessary and provides them with all of the necessary steps. The second related work is similar to the kind of research that we are doing. Itâs an exploratory data analysis of the Seattle Pet License data. It provides visuals of top breeds and top names. The analysis uses code to extract various information from the set. The last related work is an article about the reality of people and their pet licenses. Most people donât realize that you are supposed to get your pets licensed. Having a pet license in Seattle is a necessity, but the amount of people that actually license their pets is low. Stated as â26.9 percent compliance rate for dogs by their owners and only a 14.5 percent compliance rate for cats when it comes to licensing.â I think that a really important aspect of this work is getting this percentage up and higher in the 50% range since a lot of people are uneducated when it comes to pet licensing information.â (Ironside, 2011)
+
+- License. License - Animal Shelter. (n.d.). Retrieved February 4, 2022, from https://www.seattle.gov/animal-shelter/license
+
+- Extract and analyze the Seattle Pet Licenses Dataset. Aaron Schlegel's Notebook of Interesting Things. (2018, March 19). Retrieved February 4, 2022, from https://aaronschlegel.me/extract-analyze-seattle-pet-licenses-dataset.html
+
+- Ironside, M. (2011, April 17). Wait a minute; do I need to license my pet? The Seattle Times. Retrieved February 4, 2022, from https://www.seattletimes.com/life/pets/wait-a-minute-do-i-need-to-license-my-pet/
+
+### The Dataset
+
+#### Where did you find the data? Please include a link to the data source
+- [Kaggle.com](https://www.kaggle.com/aaronschlegel/seattle-pet-licenses)
+
+#### Who collected the data?
+- Seattle Animal Shelter - Brought to Kaggle.com by AaronSchlegel
+
+#### How was the data collected or generated?
+- The Seattle Pet Licenses dataset was compiled by the City of Seattle Department of Finance and Administrative Services through the city of Seattle's Open Data initiative. However, the creator and maintainer of the dataset is the Seattle Animal Shelter. The Statistics of Income (SOI) dataset is owned and maintained by the IRS. The Seattle Pet Licenses dataset is a clean representation of the Washington Zip Code SOI 2015 dataset.
+
+#### Why was the data collected?
+- There was a significant difference in the number of per licensed between 2005 and mid-2014 when the number rise dramatically. Even though there are around 5 million more owned cats in the United States than dogs, there appears to be a large gap in the number of dogs licensed compared to cats. AaronSchlegel hoped that by making this data available on Kaggle.com, users who examine the data can uncover insights and recommendations for the Seattle Animal Shelter to help raise pet licensing numbers and persuade pet owners who haven't licensed their pets why it's so important why they should.
+
+#### How many observations (rows) are in your data?
+- 42239 rows
+
+#### How many features (columns) are in the data?
+- 26 columns
+
+#### What, if any, ethical questions or questions of power do you need to consider when working with this data?
+- Do people want to get their pet licensed? Why should they?
+- Does a householdâs income correlate with the number of pets they have?
+- Does dogs or cats have a higher rate of licenses? Potential reasons?
+
+#### What are possible limitations or problems with this data? (at least 200 words)
+- Overall there is not much of a problem working with the dataset since itâs already quite structured; however, we could still do some data cleaning before actually using the dataset to narrow our focus.There are two columns that focus on the breed of dog and cat, one of which have 66% null value so we agree that it would be better to eliminate the two columns. Next, the pet licenses record might not be a hundred percent correct since the Seattle Pet Licenses organization only have the records of dogs and cats that were reported. This might only represent a part of the total number of animals in Seattle. There are also information about household, income with zipcode, number of dependents, number of joint household, etc. A lot of information lead to a lot of potential analysis so it might be a challenge for us to understand/ analyze the dataset. Our plan to tackle this dataset is first to narrow down our focus the comparison of number of dogs and cats in Seattle and how many of them were licensed. Next we use the income dataset to see whether there is a correlation between number of pets and a household income. This can also include other factors such as number of dependent and the living area (zipcode). Having a plan will help us limit the problems of having too many ideas for a big dataset such as this one.
+
+### Implications
+
+- There are non-profit organizations everywhere for almost every cause, meaning that there will be technologists within that organization looking at/collecting the data for their main cause. Non-profit organizations that are focusing on the safety of animals can use the data that has been collected here and other data to see what they need to do to achieve their goal. As for designers, their job is to design things for their main theme. For the designers who are focusing more on animals/pets, they can use the data to determine how much merchandise they need to produce for each animal in the Seattle area. Finally, as for the policymakers, one of their jobs is to enforce safety laws on the people and animals. In this case, there is a Seattle Municipal Code Section 9.25. 050 where it states that all cats and dogs, and other miniature animals are required to be licensed.  The policymakers can use the data to see how many people actually registered/licensed their pets so they could decide whether they need to more strictly enforce their law or not.  
+
+
+### Limitations & Challenges
+- The Seattle Pet Licenses Dataset is a structured and cleaned dataset. There is not much redundant and incorrect data. However, it does not mean that we do zero cleaning or there are no limitations to this dataset. Below are a few limitations of the Seattle Pet Licenses and how we are going to tackle them.
+Firstly, there are null outcomes for license code variable, this means that it includes other types of animals besides dogs and cats. Our group decide to only analyze information related to dogs and cats specifically, so we have to clean records where license code is null for consistency. The current dataset has 43885 records, after cleaning the null values, we have 42239 records. On top of that, this is a subset of larger pet ownership, the records shows that there are 65% dog and 35% cat in Seattle. However, we do not know if this is broadly representative of pet ownership in Seattle. More verification is needed here.
+
+
+### Summary Information
+
+```{r summary info, echo = FALSE, message = FALSE}
+source("summary.R")
+```
+
+- We found the ratio between the number of dogs and cats in Seattle. There is a much higher ratio of Dogs to Cats, being `r ratio_dog_cat`. We also found the top 5 primary-breeds in dogs and top 5 primary-breeds in cats to determine preferred breeds.
+- Top 5 primary-breeds for dogs: `r dog_breeds`
+- Top 5 primary-breeds for cats: `r cat_breeds`
+
+- Moreover, there is a correlation between the number of pet licenses and zip code in Seattle. We found the area with the highess/ lowest number of licenced pets in the Seattle area, which were `r high_zipcode` with the highest number and a list of zipcode that only has 1 licensed pet (`r low_zipcode`). Next, the overall trends of pet licensing trend over the year. We can see that there is a sharp increase between 2014-2015 with `r gap_year` more pets being licensed. However, we can also clearly see that there is a limitation of the dataset on this chart. The number of licenses from 2005 till 2010 is extremely low (less than 10), which could mean that the numbers was not collected effectively and accurately. Only after 2014, we can see a large number of pet licenses and it keeps increasing over the years.
+- Lastly, we found how drastically the licenses of cats and dogs increased throughout 2005-2016. The chart shows us how drastically the licenses of cats and dogs increased throughout 2005-2016 and the difference between cats and dogs. As we use this graph in our project, we can see that there is a drastic difference between the cats and dogs, but we also notice that during 2015 and 2016 there was a spike in the data. Meaning for some reason more people started to get their pets licensed. We can also tell by the chart that as the years progresses, more and more pets are being licensed, which is a great thing. 
+
+
+### Table
+
+Looking at the table, we can see  a much higher ratio of Dogs to Cats, being `r ratio_dog_cat`. We included the chart to illustrate the significant difference in the preference of pet owners in choosing whether to get dogs or cats as a pet.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+```
+
+```{r aggregated table, echo=FALSE, message = FALSE}
+library(knitr)
+source("first_chart.R")
+kable(table, caption = "Dog Cat Ratio")%>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+
+```
+
+### Chart 1
+
+- This chart aims to visually represent the ratio of Dogs and Cats. One bar, labeled at 'Cat' is the number of cats in the data set, and the bar labeled as 'Dog' does the same, but for dogs. Looking at the chart, it can be seen that there is a much higher ratio of Dogs to Cats, and this is also seen in the table created above which contains the numerical value for the ratio, being ~1.879817. I included the chart because although a number might be able to convey the difference between the species, actually being able to see it is highly effective and helpful for interpretation.
+
+```{r, echo = FALSE, code = readLines("first_chart.R")}
+
+```
+
+### Chart 2
+
+- This chart shows us how drastically the licenses of cats and dogs increased throughout 2005-2016 and the difference between cats and dogs. As we use this graph in our project, we can see that there is a drastic difference between the cats and dogs, but we also notice that during 2015 and 2016 there was a spike in the data. Meaning for some reason more people started to get their pets licensed. We can also tell by the chart that as the years progresses, more and more pets are being licensed, which is a great thing. The purpose of this chart is to visualize how the number of pets being licensed has changed throughout the years and where did it changed the most. 
+
+```{r, echo = FALSE, code = readLines("second_chart.R")}
+```
+
+### Chart 3
+
+
+- This chart shows the grouped total license count by year from 2005-2016 to see the overall trend of pet licensing over the years.
+What: We can see that there is a sharp increase between 2014-2015 with 19,123 more pets being licensed. However, we can also clearly see that
+there is a limitation of the dataset on this chart. The number of licenses from 2005 till 2010 is extremely low (less than 10), which could mean
+that the numbers was not collected effectively and accurately. Only after 2014, we can see a large number of pet licenses and it keeps increasing over the years. 
+
+```{r, echo = FALSE, message = FALSE, code = readLines("third_chart.R")}
+
+```
