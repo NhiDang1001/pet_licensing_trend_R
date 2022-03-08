@@ -1,7 +1,7 @@
 library(ggplot2)
 library(stringr)
 library(pivottabler)
-library("plotly")
+library(plotly)
 library(tidyverse)
 library(lubridate)
 
@@ -40,24 +40,7 @@ server <- function(input, output) {
   })
   
   
-  data <- reactive(
-    req(input$animal),
-    Chart_table <- seattle_pet_licenses %>% filter(species %in% input$animal) %>% group_by(species) %>% summarize(Num_animal = n()),
-    df_for_Chart <- Chart_table[-c(3), ]
-  )
-  
-  output$Chart1_Plot <- renderPlotly({
-    
-    #Plot
-    my_plot <- ggplot(data = data()) +
-      geom_col(mapping = aes(x = species, y = Num_animal, fill = species)) + coord_flip()
-    
-    my_plotly_plot <- ggplotly(my_plot)
-    
-    
-    return(my_plotly_plot)
-  })
-  
+
   
   
   output$Text_trends <- renderText({"This chart shows us how drastically the licenses of cats and dogs increased throughout 2005-2016 and the difference between cats and dogs.
@@ -80,3 +63,4 @@ server <- function(input, output) {
 #   # scale_fill_manual(values = custom_colors) +
 #   theme(legend.position = "right",
 #         legend.title = element_text(face = "bold"))
+
