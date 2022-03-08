@@ -20,3 +20,4 @@ We gathered all of our information from this website. [Seattle Pet Licenses](htt
 ![image](images/cat_dog.png)
 
 # Conclusion / Summary Takeaways
+The main three takeaways from the graphs in this project, seeing how the number of people licensing their pets has drastically increased throughout the years. The difference between how many cats get licensed and how many dogs get licensed. The final takeaway is seeing which year the number licensed pets increased the most for both pets and the visualization of how there is a huge gap between licensed cats and dogs during each year.
