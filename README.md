@@ -19,8 +19,8 @@ When you are finished, please add the text from your introductory and concluding
 Feel free to delete these instructions for your final README.md file and to make your GitHub repository public if you would like others to be able to see it.
 
 # Introduction
--For our group, we decided to work with the pet licensing data, to inform Seattleites on pet ownership trends and encouraged the people of Seattle to adopt unlicensed pets at the animal shelters. Our goal is to acknowledge people who have gotten their pets licensed in the City of Seattle and raise awareness of adopting pets, such as cats and dogs.
--We gathered all of our information from this website. [Seattle Pet Licenses](https://www.kaggle.com/aaronschlegel/seattle-pet-licenses)
+For our group, we decided to work with the pet licensing data, to inform Seattleites on pet ownership trends and encouraged the people of Seattle to adopt unlicensed pets at the animal shelters. Our goal is to acknowledge people who have gotten their pets licensed in the City of Seattle and raise awareness of adopting pets, such as cats and dogs.
+We gathered all of our information from this website. [Seattle Pet Licenses](https://www.kaggle.com/aaronschlegel/seattle-pet-licenses)
 
 
 # Conclusion / Summary Takeaways
