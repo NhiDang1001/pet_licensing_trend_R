@@ -4,12 +4,14 @@ library(pivottabler)
 library(plotly)
 library(tidyverse)
 library(lubridate)
+library(dplyr)
+
 
 
 
 seattle_pet_licenses <- read.csv('https://raw.githubusercontent.com/info-201b-wi22/final-project-anhdang1/main/seattle_pet_licenses.csv?token=GHSAT0AAAAAABR5WKO56ZL6JPWWNHZGYMO6YRP2Q2A')
-year <- str_sub(seattle_pets_licenses_subset$license_issue_date, 1, 4)
 
+#Trend of licensed cats and dogs between 2005 - 2016
 dogs_year <- seattle_pet_licenses %>%  filter (species == "Dog") %>% group_by(year = year(license_issue_date)) %>% summarize(Dogs = n())
 cats_year <- seattle_pet_licenses %>%  filter (species == "Cat") %>% group_by(year = year(license_issue_date)) %>% summarize(Cats = n())
 
@@ -19,6 +21,34 @@ draft <- species_year %>%
   pivot_longer(!year, names_to = "Species",
                values_to = "Licensed_pet"
   )
+
+
+#Trend of total pet, dog, cat licenses by Month
+cat_by_month <- seattle_pet_licenses %>% filter(species == "Cat") %>% group_by(month = month(license_issue_date)) %>% summarize(Cats = n())
+dog_by_month <- seattle_pet_licenses %>%  filter (species == "Dog") %>% group_by(month = month(license_issue_date)) %>% summarize(Dogs = n())
+total_by_month <- seattle_pet_licenses %>% group_by(month = month(license_issue_date)) %>% summarize(Total_Pets = n())
+
+species_month <- merge(cat_by_month,dog_by_month, by="month")
+
+trend_data <- left_join(species_month, total_by_month, by = "month")
+
+pivot_data <- pivot_longer(trend_data, 2:4, names_to = "Types", values_to = "number_of_pets")
+
+
+hello <- ggplot(data = pivot_data) +
+  geom_line(mapping= aes(x=month, y = number_of_pets, color = Types)) +
+  labs(title = 'Trend of total pet, dog, cat licenses by Month', x='Month', y='Number of pets') 
+ggplotly(hello)
+
+#SELECT MONTH(license_issue_date), count(*)
+#FROM seattle_pet_licenses
+#WHERE license_number is not null AND species = 'Cat'
+#GROUP BY MONTH(license_issue_date)
+#ORDER BY COUNT(*);
+
+
+
+
 
 #chart_script 
 
@@ -39,6 +69,16 @@ server <- function(input, output) {
 
   })
   
+  output$pet_comparisonPlot <- renderPlotly({
+    pivot_data <- pivot_data %>% filter(Types %in% input$user_types) %>% filter(month <= input$month[2],
+                                                                               month >= input$month[1])
+    
+    hello <- ggplot(data = pivot_data) +
+      geom_line(mapping= aes(x=month, y = number_of_pets, color = Types)) +
+      labs(title = 'Trend of total pet, dog, cat licenses by Month', x='Month', y='Number of pets') 
+    ggplotly(hello)
+    
+  })
   
 
   

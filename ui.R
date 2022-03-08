@@ -51,13 +51,33 @@ ui <- fluidPage(
                           rbokehOutput("Trends", width = "100%", height = "auto")
                         ) 
                       )),
-             tabPanel("Tab 2"),
-             mainPanel(
-               selectInput(inputId = "animal",
-                           label = "Choose Animal",
-                           list("Cat", "Dog")),
-               plotlyOutput(outputId = "Chart1_Plot")
-             ),
+             tabPanel("Month Trends",
+                      # Side bar layout
+                      sidebarLayout( 
+                        sidebarPanel(
+                          # Allow user to input range
+                          selectInput(
+                            inputId = "user_types", 
+                            label = "Select Pet Types",
+                            choices = pivot_data$Types,
+                            selected = "Dogs",
+                            multiple = TRUE),
+                          sliderInput("month", label = "Month slider",
+                                      min = min(pivot_data$month),
+                                      max = max(pivot_data$month),
+                                      value = c(3, 9),
+                                      sep = "",
+                                      step = 1)
+                          
+                        ),
+                        # Main Panel3
+                        mainPanel(
+                          # display Bokeh output3
+                          plotlyOutput(outputId = "pet_comparisonPlot"),
+                          
+                        ) 
+                      )),
+            
              tabPanel("Tab 3")
   )
 )
