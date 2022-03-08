@@ -32,13 +32,34 @@ server <- function(input, output) {
     draft <- draft %>% filter(Species %in% input$user_category) %>% filter(year <= input$year[2],
                                                                            year >= input$year[1])
     
-    # Make a scatter plot of oil per capita over time by country
     figure(title = "Trend of licensed cats and dogs between 2005 - 2016") %>%
       ly_lines(year, Licensed_pet, data = draft, color = Species) %>%
       x_axis(label = "Year") %>%
       y_axis(label = "Licensed pet")
 
   })
+  
+  
+  data <- reactive(
+    req(input$animal),
+    Chart_table <- seattle_pet_licenses %>% filter(species %in% input$animal) %>% group_by(species) %>% summarize(Num_animal = n()),
+    df_for_Chart <- Chart_table[-c(3), ]
+  )
+  
+  output$Chart1_Plot <- renderPlotly({
+    
+    #Plot
+    my_plot <- ggplot(data = data()) +
+      geom_col(mapping = aes(x = species, y = Num_animal, fill = species)) + coord_flip()
+    
+    my_plotly_plot <- ggplotly(my_plot)
+    
+    
+    return(my_plotly_plot)
+  })
+  
+  
+  
   output$Text_trends <- renderText({"This chart shows us how drastically the licenses of cats and dogs increased throughout 2005-2016 and the difference between cats and dogs.
     As we use this graph in our project, we can see that there is a drastic difference between the cats and dogs, but we also notice that during 2015 and
     2016 there was a spike in the data. Meaning for some reason more people started to get their pets licensed. We can also tell by the chart

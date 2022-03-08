@@ -52,6 +52,12 @@ ui <- fluidPage(
                         ) 
                       )),
              tabPanel("Tab 2"),
+             mainPanel(
+               selectInput(inputId = "animal",
+                           label = "Choose Animal",
+                           list("Cat", "Dog")),
+               plotlyOutput(outputId = "Chart1_Plot")
+             ),
              tabPanel("Tab 3")
   )
 )
