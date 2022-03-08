@@ -1,4 +1,4 @@
-seattle_pet_licenses <- read.csv('https://raw.githubusercontent.com/info-201b-wi22/exploratory-analysis-anhdang1/main/seattle_pet_licenses.csv?token=GHSAT0AAAAAABQJKIVXJSAQAY5BEM3XQUBOYQ3JKVA')
+seattle_pet_licenses <- read.csv('https://raw.githubusercontent.com/info-201b-wi22/final-project-anhdang1/main/seattle_pet_licenses.csv?token=GHSAT0AAAAAABR5WKO56ZL6JPWWNHZGYMO6YRP2Q2A')
 library("dplyr")
 library("ggplot2")
 dogs <- seattle_pet_licenses %>% group_by(species) %>% filter (species == "Dog") %>% summarize(Num_dogs = n())
