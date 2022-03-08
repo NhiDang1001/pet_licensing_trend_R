@@ -17,8 +17,7 @@ Link:
 For our group, we decided to work with the pet licensing data, to inform Seattleites on pet ownership trends and encourage the people of Seattle to adopt unlicensed pets at the animal shelters. Our goal is to acknowledge people who have gotten their pets licensed in the City of Seattle and raise awareness of adopting pets, such as cats and dogs.
 We gathered all of our information from this website. [Seattle Pet Licenses](https://www.kaggle.com/aaronschlegel/seattle-pet-licenses)
 
-![image](images/cat_dog.png)
-img[alt=cat_dog] { width: 100px; }
+![image](images/cat_dog.png = x100)
 
 
 # Conclusion / Summary Takeaways
