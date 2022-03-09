@@ -15,15 +15,30 @@ seattle_pet_licenses_year <- seattle_pet_licenses %>% group_by(year = year(licen
 count_range <- range(seattle_pet_licenses_year$year)
 
 ui <- fluidPage(
-  
+  tags$head(
+
+    tags$style(HTML("
+      @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+      body {
+        background-color: pink;
+        color: black;
+      }
+      h2 {
+        font-family: 'Yusei Magic', sans-serif;
+      }
+      .shiny-input-container {
+        color: #FFFFFF;
+      }"))
+  ),
+  titlePanel("Seattle Pet Licenses"),
   navbarPage("Seattle Pet Licenses",
              tabPanel(
                "Introduction",
                HTML('<a href = "https://raw.githubusercontent.com/info-201b-wi22/final-project-anhdang1/main/seattle_pet_licenses.csv?token=GHSAT0AAAAAABR5WKO56ZL6JPWWNHZGYMO6YRP2Q2A" >Here\'s a Direct Link to the Raw Data Set</a>'),
                fluidPage(theme = bs_theme(bootswatch = "minty"),
                          p("Welcome to Seattle Pet Licenses app!"),
-                         mainPanel(
-                           textOutput("Text01"),
+                         mainPanel(img(src = "cat_dog.png", height = 300, width = 400, align = "center"),
+                           textOutput("introduction"),
                            textOutput("Value")
                          )
                )
@@ -99,5 +114,10 @@ ui <- fluidPage(
                           
                         ))
              ),
-  )
+             tabPanel(
+               "Conclusion",
+                         p("Welcome to The End!"),
+                                   textOutput("conclusion"),
+                                   textOutput("Value") 
+                                   ))
 )

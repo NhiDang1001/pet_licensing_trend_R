@@ -98,6 +98,15 @@ server <- function(input, output) {
   
 
   
+  output$introduction<- renderText({"For our group, we decided to work with the pet licensing data, to inform Seattleites on pet ownership trends and encouraged the people of Seattle to adopt unlicensed pets at the animal shelters. 
+    Our goal is to acknowledge people who have gotten their pets licensed in the City of Seattle and raise awareness of adopting pets, such as cats and dogs. 
+    There are several benefits to licensing one's pet, including a return ride home if your pet is lost, and easier contact from a veterinarian if your pet is unfortunately injured. 
+    One of the most significant impacts is that this could be an essential source to plan on marketing and outreach campaigns targeting cat and dog owners who haven't considered licensing their pets. 
+    The major questions we are asking are, “What is the ratio between licensed cats and dogs?”, “When did people start to get their pets licensed?”, and “How has the population of licensed pets changed throughout the years?”.
+    The data came from Seattle Animal Shelter, Aaron Schlegel then brought it to the Kaggle website. 
+    When it comes to limitations to this dataset, there are null outcomes for license code variable, this means that it includes other types of animals besides dogs and cats. 
+    On top of that, this is a subset of larger pet ownership, the records shows that there are 65% dog and 35% cat in Seattle. However, we do not know if this is broadly representative of pet ownership in Seattle. 
+    More verification is needed here."})
   
   output$Text_trends <- renderText({"This chart shows us how drastically the licenses of cats and dogs increased throughout 2005-2016 and the difference between cats and dogs.
     As we use this graph in our project, we can see that there is a drastic difference between the cats and dogs, but we also notice that during 2015 and
@@ -123,6 +132,15 @@ server <- function(input, output) {
     accepting of animals, or palces which let animals live within housing. On the other hand, looking at the lowest points, these might 
     resonate with areas which are not accepting of pets, or a coincidence regarding the people who wish not to own pets, but that would 
     take more research to reach a proper conclusion on the definite trends."})
+  
+  output$conclusion <- renderText({"One of the main take away from the three graphs is seeing how the number of people licensing their pets has drastically increased throughout the years. 
+  This indicates that as the years goes on, the amount of pets getting licensed has gone up. Which is a great thing because it is beneficial for the owners and the pets themselves. 
+  Another takeaway is  seeing the difference between how many cats get licensed and how many dogs get licensed. 
+  When seeing this, we can assume that there are not as many cat owners as there are dog owners, or that there are less people who get their pets licensed if their pet is a cat. 
+  The final takeaway is seeing which year the number licensed pets increased the most for both pets and the visualization of how there is a huge gap between licensed cats and dogs during each year. 
+  For the exploration analysis, we were able to figure out the correlation between the number of pet licenses with the zipcodes in Seattle, which zipcode has the highest and lowest amount of licensed pets. 
+  We were able to figure out the top 5 primary-breeds in dogs and cats. With all of this information, we were able to answer most of our questions and gather more information to teach other people about the 
+  licensed pets data and encourage the people who still havent licensed their pets, to do so, or maybe in the future when they do adopt their pets they would remember to get them licensed."})
 }
 
 
