@@ -78,6 +78,23 @@ ui <- fluidPage(
                         ) 
                       )),
             
-             tabPanel("Tab 3")
+             tabPanel("Zip Code Trends",
+                      #Side Bar layout
+                      sidebarLayout(
+                        sidebarPanel(
+                          sliderInput("substring_zip_code", label = "Zip Code Slider",
+                                      min = min(as.numeric(zip_data$substring_zip_code)),
+                                      max = max(as.numeric(zip_data$substring_zip_code)),
+                                      value = c(9810, 98225),
+                                      sep = "",
+                                      step = 10)
+                          
+                        ),
+                        mainPanel(
+                          # plotly output for chart
+                          plotlyOutput(outputId = "zip_comparisonPlot"),
+                          
+                        ))
+             ),
   )
 )

@@ -5,7 +5,7 @@ library(plotly)
 library(tidyverse)
 library(lubridate)
 library(dplyr)
-
+library(stringr)
 
 
 
@@ -40,12 +40,19 @@ hello <- ggplot(data = pivot_data) +
   labs(title = 'Trend of total pet, dog, cat licenses by Month', x='Month', y='Number of pets') 
 ggplotly(hello)
 
-#SELECT MONTH(license_issue_date), count(*)
-#FROM seattle_pet_licenses
-#WHERE license_number is not null AND species = 'Cat'
-#GROUP BY MONTH(license_issue_date)
-#ORDER BY COUNT(*);
 
+#Licensed count of Dogs and Cat by Zipcode
+cat_zip <- seattle_pet_licenses %>% filter(species == "Cat") %>% filter(zip_code >0 ) %>% group_by(zip_code) %>% summarize(Cats = n())
+dog_zip <- seattle_pet_licenses %>%  filter (species == "Dog") %>% filter(zip_code >0 ) %>% group_by(zip_code) %>% summarize(Dogs = n())
+
+species_zip <- merge(cat_zip,dog_zip, by="zip_code", na.rm=T)
+
+zip_complete <- species_zip[!(is.na(species_zip$zip_code) & species_zip$zip_code==" "), ]
+
+
+zip_data <- pivot_longer(zip_complete, 2:3, names_to = "Types", values_to = "number_of_pets")
+
+zip_data$substring_zip_code = str_sub(zip_data$zip_code,1,5)
 
 
 
@@ -80,6 +87,15 @@ server <- function(input, output) {
     
   })
   
+  output$zip_comparisonPlot <- renderPlotly({
+    zip_data <- zip_data %>% filter(substring_zip_code <= as.numeric(input$substring_zip_code[2]),substring_zip_code >= as.numeric(input$substring_zip_code[1]))
+    
+    compare <- ggplot(data = zip_data) +
+      geom_col(mapping= aes(x=substring_zip_code, y = number_of_pets, fill = Types), position = "dodge") +
+      theme(axis.text.x = element_text(angle = 45))+
+      labs(title = 'Licensed count of Dogs and Cat by Zip code', x='Zip Code', y='Number of pets') 
+    ggplotly(compare)  })
+  
 
   
   
@@ -91,16 +107,5 @@ server <- function(input, output) {
 
 
 
-#Draft for gg plot
-# ggplot(data = draft, aes(x = year, y = Licensed_pet, color = Species)) + 
-#   # ggtitle("How the Data Progressed") +
-#   geom_line() +
-#   labs(title = "Trend of licensed cats and dogs between 2005 - 2016",
-#        subtitle = "Data drawn from Seattle Animal Shelter - Brought to Kaggle.com by AaronSchlegel",
-#        x = "Year",
-#        y = "Licensed pet",
-#        fill = "Species") +
-#   # scale_fill_manual(values = custom_colors) +
-#   theme(legend.position = "right",
-#         legend.title = element_text(face = "bold"))
+
 
