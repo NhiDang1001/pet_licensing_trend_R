@@ -105,9 +105,24 @@ server <- function(input, output) {
     that as the years progresses, more and more pets are being licensed, which is a great thing."})
   
   
-  output$Tab2_trends <- renderText({"This chart shows the changes in pet licensing amounts over the course of the year, broken down by months. Looking at the three categories displayed in the chart (Dogs, Cats, and Total Pets), a visible pattern corresponding to each included variable comes into perspective. They all appear to follow an upwards trend, experiencing two slight dip, with the second dip being slightly larger and finally ending in an increase in the final month, December. Looking at the data more closely, it would appear that the greatest increase appears between the months of September and December, with a 169% increase, hence the upwards trend in the data. A decrease of 53% is seen between the months of July and September. Summer seems to be the least popular season for license, versus Autumn which is the most popular, indicating a potential seasonality trend. September contains the greatest dip in the data which might indicate that people return some of their pets after taking care of them in the summer or even potentially fostering animals, and adopt in the winter once again."})
+  output$Tab2_trends <- renderText({"This chart shows the changes in pet licensing amounts over the course of the year, broken down by months. 
+    Looking at the three categories displayed in the chart (Dogs, Cats, and Total Pets), a visible pattern corresponding to each included 
+    variable comes into perspective. They all appear to follow an upwards trend, experiencing two slight dip, with the second dip being 
+    slightly larger and finally ending in an increase in the final month, December. Looking at the data more closely, it would appear that 
+    the greatest increase appears between the months of September and December, with a 169% increase, hence the upwards trend in the data. 
+    A decrease of 53% is seen between the months of July and September. Summer seems to be the least popular season for license, versus 
+    Autumn which is the most popular, indicating a potential seasonality trend. September contains the greatest dip in the data which might 
+    indicate that people return some of their pets after taking care of them in the summer or even potentially fostering animals, and adopt 
+    in the winter once again."})
   
-  output$Tab3_trends <- renderText({"Looking at this data visualization, a couple of trends begin to appear. First of all, it seems like across all zipcodes, dog licenses are more popular than cat licenses with the highest dog value being 3818 pets, and the highest cat zipcode value being 2171, which is surprising since this is around a 1,600 pet difference. The data appears to be multimodial between the two variables, Dog and Cat. The two modes center around the zipcodes 98103, and the second mode at 98115 which might indicate geographic association with pet licencing values since both dog and cat values spike at those locations. People might live in areas that are more accepting of animals, or palces which let animals live within housing. On the other hand, looking at the lowest points, these might resonate with areas which are not accepting of pets, or a coincidence regarding the people who wish not to own pets, but that would take more research to reach a proper conclusion on the definite trends."})
+  output$Tab3_trends <- renderText({"Looking at this data visualization, a couple of trends begin to appear. First of all, it seems like 
+    across all zipcodes, dog licenses are more popular than cat licenses with the highest dog value being 3818 pets, and the highest cat 
+    zipcode value being 2171, which is surprising since this is around a 1,600 pet difference. The data appears to be multimodial between 
+    the two variables, Dog and Cat. The two modes center around the zipcodes 98103, and the second mode at 98115 which might indicate geographic 
+    association with pet licencing values since both dog and cat values spike at those locations. People might live in areas that are more 
+    accepting of animals, or palces which let animals live within housing. On the other hand, looking at the lowest points, these might 
+    resonate with areas which are not accepting of pets, or a coincidence regarding the people who wish not to own pets, but that would 
+    take more research to reach a proper conclusion on the definite trends."})
 }
 
 
