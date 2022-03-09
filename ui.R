@@ -20,7 +20,7 @@ ui <- fluidPage(
     tags$style(HTML("
       @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
       body {
-        background-color: pink;
+        background-color: white;
         color: black;
       }
       h2 {
