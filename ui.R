@@ -19,6 +19,7 @@ ui <- fluidPage(
   navbarPage("Seattle Pet Licenses",
              tabPanel(
                "Introduction",
+               HTML('<a href = "https://raw.githubusercontent.com/info-201b-wi22/final-project-anhdang1/main/seattle_pet_licenses.csv?token=GHSAT0AAAAAABR5WKO56ZL6JPWWNHZGYMO6YRP2Q2A" >Here\'s a Direct Link to the Raw Data Set</a>'),
                fluidPage(theme = bs_theme(bootswatch = "minty"),
                          p("Welcome to Seattle Pet Licenses app!"),
                          mainPanel(
@@ -72,6 +73,7 @@ ui <- fluidPage(
                         ),
                         # Main Panel3
                         mainPanel(
+                          textOutput("Tab2_trends"),
                           # display Bokeh output3
                           plotlyOutput(outputId = "pet_comparisonPlot"),
                           
@@ -91,6 +93,7 @@ ui <- fluidPage(
                           
                         ),
                         mainPanel(
+                          textOutput("Tab3_trends"),
                           # plotly output for chart
                           plotlyOutput(outputId = "zip_comparisonPlot"),
                           
