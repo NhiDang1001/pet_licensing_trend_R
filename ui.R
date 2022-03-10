@@ -27,7 +27,7 @@ ui <- fluidPage(
         font-family: 'Yusei Magic', sans-serif;
       }
       .shiny-input-container {
-        color: #FFFFFF;
+        color: #000000;
       }"))
   ),
   titlePanel("Seattle Pet Licenses"),
@@ -37,7 +37,7 @@ ui <- fluidPage(
                HTML('<a href = "https://raw.githubusercontent.com/info-201b-wi22/final-project-anhdang1/main/seattle_pet_licenses.csv?token=GHSAT0AAAAAABR5WKO56ZL6JPWWNHZGYMO6YRP2Q2A" >Here\'s a Direct Link to the Raw Data Set</a>'),
                fluidPage(theme = bs_theme(bootswatch = "minty"),
                          p("Welcome to Seattle Pet Licenses app!"),
-                         mainPanel(img(src = "cat_dog.png", height = 300, width = 400, align = "center"),
+                         mainPanel(img(src = "/image/cat_dog.png", height = 300, width = 400, align = "center"),
                            textOutput("introduction"),
                            textOutput("Value")
                          )
