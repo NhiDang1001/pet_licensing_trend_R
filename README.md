@@ -11,7 +11,7 @@ Thao Do (thaotdo@uw.edu)
 
 Vera Guber (vera2@uw.edu)
 
-Link:
+Link: https://thaotdo.shinyapps.io/final-project-anhdang1/ 
 
 # Introduction
 For our group, we decided to work with the pet licensing data, to inform Seattleites on pet ownership trends and encourage the people of Seattle to adopt unlicensed pets at the animal shelters. Our goal is to acknowledge people who have gotten their pets licensed in the City of Seattle and raise awareness of adopting pets, such as cats and dogs.
