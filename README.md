@@ -1,6 +1,5 @@
 # Seattle Pet Licenses
 
-Vera Guber (vera2@uw.edu)
 
 Link: https://thaotdo.shinyapps.io/final-project-anhdang1/ 
 
